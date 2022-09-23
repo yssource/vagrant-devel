@@ -15,18 +15,18 @@
 # limitations under the License.
 
 namespace: alvistack
-name: ubuntu
-description: Vagrant Box Packaging for Ubuntu
+name: devel
+description: Vagrant Box Packaging for Development
 
 version: 0.0.0
 readme: README.md
 license:
   - Apache-2.0
 
-repository: https://github.com/alvistack/vagrant-ubuntu
-documentation: https://github.com/alvistack/vagrant-ubuntu
-homepage: https://github.com/alvistack/vagrant-ubuntu
-issues: https://github.com/alvistack/vagrant-ubuntu/issues
+repository: https://github.com/alvistack/vagrant-devel
+documentation: https://github.com/alvistack/vagrant-devel
+homepage: https://github.com/alvistack/vagrant-devel
+issues: https://github.com/alvistack/vagrant-devel/issues
 
 dependencies: {}
 tags:

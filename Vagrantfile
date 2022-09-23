@@ -1,6 +1,6 @@
 Vagrant.configure('2') do |config|
-  config.vm.hostname = 'ubuntu-22.04'
-  config.vm.box = 'alvistack/ubuntu-22.04'
+  config.vm.hostname = 'devel-22.04'
+  config.vm.box = 'alvistack/devel-22.04'
 
   config.vm.provider :libvirt do |libvirt|
     libvirt.cpu_mode = 'host-passthrough'
