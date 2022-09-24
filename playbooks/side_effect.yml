@@ -19,6 +19,21 @@
   remote_user: root
   become: true
   tasks:
+    - name: systemctl stop
+      ansible.builtin.service:
+        name: "{{ item.name }}"
+        state: "stopped"
+        enabled: false
+      loop:
+        - { name: "apache2.service" }
+        - { name: "mariadb.service" }
+        - { name: "php7.4-fpm.service" }
+        - { name: "php8.0-fpm.service" }
+        - { name: "php8.1-fpm.service" }
+        - { name: "postgresql.service" }
+      changed_when: false
+      failed_when: false
+
     - name: prepare directories
       ansible.builtin.file:
         dest: "{{ item.dest }}"
