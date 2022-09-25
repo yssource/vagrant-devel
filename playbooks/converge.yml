@@ -233,3 +233,7 @@
     - name: include role
       ansible.builtin.include_role:
         name: molecule
+
+    - name: include role
+      ansible.builtin.include_role:
+        name: gitlab_runner
