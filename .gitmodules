@@ -38,6 +38,10 @@
 	path = roles/git
 	url = https://github.com/alvistack/ansible-role-git.git
 	branch = develop
+[submodule "roles/gitlab_runner"]
+	path = roles/gitlab_runner
+	url = https://github.com/alvistack/ansible-role-gitlab_runner.git
+	branch = develop
 [submodule "roles/httpd"]
 	path = roles/httpd
 	url = https://github.com/alvistack/ansible-role-httpd.git
