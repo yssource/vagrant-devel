@@ -75,30 +75,18 @@
       changed_when: false
       failed_when: false
 
-    - name: rm -rf /etc/ssh/ssh_host_*
-      ansible.builtin.raw: |
-        set -eu
-        rm -rf /etc/ssh/ssh_host_*
-      args:
-        executable: "/bin/bash"
-      changed_when: false
-      failed_when: false
-
-    - name: truncate --size 0 /etc/machine-id
-      ansible.builtin.raw: |
-        set -eu
-        truncate --size 0 /etc/machine-id
-        ln -fs /etc/machine-id /var/lib/dbus/machine-id
-      args:
-        executable: "/bin/bash"
-      changed_when: false
-      failed_when: false
-
-    - name: rm -rf /var/lib/systemd/random-seed
-      ansible.builtin.raw: |
-        set -eu
-        rm -rf /var/lib/systemd/random-seed
-      args:
-        executable: "/bin/bash"
+    - name: systemctl stop
+      ansible.builtin.service:
+        name: "{{ item.name }}"
+        state: "stopped"
+        enabled: false
+      loop:
+        - { name: "apache2.service" }
+        - { name: "gitlab-runner.service" }
+        - { name: "mariadb.service" }
+        - { name: "php7.4-fpm.service" }
+        - { name: "php8.0-fpm.service" }
+        - { name: "php8.1-fpm.service" }
+        - { name: "postgresql.service" }
       changed_when: false
       failed_when: false
